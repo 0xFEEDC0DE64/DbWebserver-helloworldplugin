@@ -13,8 +13,8 @@ QString HelloWorldPlugin::pluginName() const
     return QStringLiteral("helloworld");
 }
 
-WebApplication *HelloWorldPlugin::createApplication(const QJsonObject &config) const
+WebApplication *HelloWorldPlugin::createApplication(const QJsonObject &config, WebServer &webServer) const
 {
-    return new HelloWorldApplication(config);
+    return new HelloWorldApplication(config, webServer);
 }
 
